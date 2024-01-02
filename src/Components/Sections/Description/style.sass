@@ -1,0 +1,54 @@
+@use '../../../styles/variables'
+@use '../../../styles/mixins'
+
+#description
+    @include mixins.section
+    position: relative
+    background-image: url('../../../Assets/Images/image-description-web.jpg')
+    background-position: center
+    background-size: cover
+    object-fit: cover
+    padding: 4em
+
+    .mascara
+        position: absolute
+        width: 100%
+        height: 100%
+        background-color: rgba(235, 235, 235, .8)
+        z-index: 0
+
+    .content
+        z-index: 30
+        display: flex
+        flex-direction: column
+        justify-content: center !important
+        align-items: center !important
+
+        h2
+            font-size: 2em
+            text-align: center
+            margin-bottom: 1em !important
+            color: variables.$text-color-secondary
+
+        p
+            width: 50%
+            text-align: center
+
+        span
+            text-decoration: underline #dab158
+
+        button
+            @include mixins.cta
+            animation: ctaAnimation 2s infinite linear
+            animation-delay: 2s
+
+@media (max-width: 768px )
+    #description
+        padding: 0 2em
+        
+        .content
+            h2
+                font-size: 1.5em
+        
+            p
+                width: 100%

@@ -1,0 +1,116 @@
+@use '../../../styles/variables'
+@use '../../../styles/mixins'
+
+#text
+    @include mixins.section
+    width: 100%
+    flex-direction: column
+    background-color: #ebebeb
+
+    h2
+        color: variables.$text-color-secondary
+        font-size: 2em
+
+    p
+        width: 50%
+        margin-bottom: 5em
+
+    div
+        width: 80%
+        margin: auto
+        display: flex
+        flex-direction: column
+
+        .card
+            width: 70% !important
+            height: 300px
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: center
+            border-radius: 5px
+            overflow: hidden
+            margin-bottom: 3em
+            background-color: rgba(0, 19, 55, 0.8)
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, .034), 0 6.7px 5.3px rgba(0, 0, 0, .048), 0 12.5px 10px rgba(0, 0, 0, .06), 0 22.3px 17.9px rgba(0, 0, 0, .072), 0 41.8px 33.4px rgba(0, 0, 0, .086), 0 100px 80px rgba(0, 0, 0, .12)
+            z-index: 0
+            
+            img
+                height: 300px
+                width: 50%
+
+            .wrap-ul
+                flex-direction: column !important
+                justify-content: space-between !important
+                border-radius: 0
+                margin: auto
+                z-index: 20
+                gap: 0
+                height: 100%
+
+                ul
+                    margin: auto auto 0 3em
+
+                    li
+                        display: flex
+                        align-items: center
+                        gap: .5em
+                        color: #fff
+                        font-size: 1.1em
+                        margin-bottom: .5em
+
+                        svg
+                            margin-top: .2em
+                            color: #dab158
+
+                button
+                    @include mixins.cta
+                    width: 15em
+                    font-size: 1.1em
+                    padding: .5em 1em
+                    margin: auto
+                    margin-bottom: .5em
+
+        div:nth-child(2n+1)
+            flex-direction: row-reverse
+            justify-content: start
+
+
+
+@media (max-width: 768px)
+    #text
+        padding: 0 2em
+        .content
+            width: 100% !important
+            align-items: center
+            padding: 0
+
+            div
+                width: 100% !important
+                height: auto
+                flex-direction: column-reverse !important
+                overflow: hidden
+
+
+            img
+                height: 210px !important
+                width: 100% !important
+
+            .wrap-ul
+                padding: 0
+                font-size: .9em
+                flex-direction: column !important
+
+                ul
+                    padding: 1em
+                    margin-left: 2em !important
+
+                button
+                    margin: 0
+                    width: 100%  !important
+                    font-size: 1em !important
+                    border-radius: 0 !important
+                    margin-bottom: 0 !important
+                    border: 1px solid #dab158
+
+            

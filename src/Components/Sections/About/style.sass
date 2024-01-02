@@ -1,0 +1,41 @@
+@use '../../../styles/variables'
+@use '../../../styles/mixins'
+
+#about
+    @include mixins.section
+    flex-direction: column
+    background-color: #ebebeb
+    padding-top: 4em
+
+    .content
+        h2
+            color: variables.$text-color-secondary
+            font-size: 2em
+            margin-bottom: 1em
+            text-align: center
+
+        p
+            color: #000
+            width: 50%
+            margin: auto
+            text-align: center
+            line-height: 1.5em
+            margin-bottom: 1em
+
+        span
+            text-decoration: underline #dab158
+
+        
+@media (max-width: 768px )
+    #about
+        padding: 2em
+
+        .content
+            padding: 2em 0
+
+            h2
+                font-size: 1.5em
+
+            p
+                width: 100%
+                margin-bottom: 0
